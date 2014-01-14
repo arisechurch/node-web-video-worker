@@ -1,16 +1,16 @@
 
 module.exports = function (options) {
   return function (job, ffmpeg) {
-    require('./h264.video.js')(ffmpeg)
+    require('./webm.video.js')(ffmpeg)
 
     ffmpeg
-      .addOption('-b:v', '5000k')
-      .addOption('-s:v', '1920x1080')
+      .addOption('-b:v', '7000k')
+      .addOption('-vf', 'scale=-1:1080')
 
-    require('./h264.audio.js')(ffmpeg)
+    require('./webm.audio.js')(ffmpeg)
 
     ffmpeg
       .addOption('-b:a', '192k')
-      .addOption('-f', 'mp4')
+      .addOption('-f', 'webm')
   }
 }

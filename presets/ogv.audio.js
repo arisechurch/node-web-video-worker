@@ -1,6 +1,6 @@
 
 module.exports = function (ffmpeg) {
   ffmpeg
-    .addOption('-codec:a', 'libfdk_aac')
+    .addOption('-codec:a', 'libvorbis')
     .addOption('-ac:a', 2)
 }

@@ -5,7 +5,7 @@ module.exports = function (options) {
 
     ffmpeg
       .addOption('-b:v', '2000k')
-      .addOption('-s:v', '1280x720')
+      .addOption('-vf', 'scale=-1:720')
 
     require('./h264.audio.js')(ffmpeg)
 

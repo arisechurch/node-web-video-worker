@@ -6,4 +6,6 @@ module.exports = function (ffmpeg) {
     .addOption('-profile:v', 'baseline')
     .addOption('-level', '3.1')
     .addOption('-pix_fmt', 'yuv420p')
+    .addOption('-r:v', '30')
+    .addOption('-vsync', 'vfr')
 }
