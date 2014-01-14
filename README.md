@@ -1,3 +1,4 @@
 # node-web-video
 
-Encode videos from a watch folder into h.264, webm and ogv.
+Encode videos from a queue with ffmpeg using different presets, inputs and
+outputs.
