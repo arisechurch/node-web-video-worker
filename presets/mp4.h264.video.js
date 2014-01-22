@@ -8,4 +8,5 @@ module.exports = function (ffmpeg) {
     .addOption('-pix_fmt', 'yuv420p')
     .addOption('-r:v', '30')
     .addOption('-vsync', 'vfr')
+    .addOption('-crf', '22')
 }
