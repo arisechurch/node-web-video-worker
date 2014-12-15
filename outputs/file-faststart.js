@@ -5,12 +5,12 @@ module.exports = function (config) {
 
   return function fileOutput (job, ffmpeg, done) {
     ffmpeg
-      .onProgress(onProgress)
-      .saveToFile(job.data.output.path, function (stdout, stderr, err) {
-        if (err) return done(err)
-
-        job.progress(100, 100)
-
+      .save(job.data.output.path)
+      .on('progress', onProgress)
+      .on('error', function(err) {
+        done(err);
+      })
+      .on('end', function () {
         var child = spawn(
           faststart
         , [job.data.output.path]

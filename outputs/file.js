@@ -1,16 +1,18 @@
 module.exports = function (config) {
   return function fileOutput (job, ffmpeg, done) {
     ffmpeg
-      .onProgress(onProgress)
-      .saveToFile(job.data.output.path, function (stdout, stderr, err) {
-        if (err) return done(err)
-
+      .save(job.data.output.path)
+      .on('progress', onProgress)
+      .on('error', function(err) {
+        done(err);
+      })
+      .on('end', function (stdout, stderr, err) {
         job.progress(100, 100)
         done()
       })
 
     function onProgress (progress) {
-      job.progress(progress.percent, 100)
+      job.progress(Math.round(progress.percent), 100)
     }
   }
 }

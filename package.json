@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/thechurch/node-web-video",
   "dependencies": {
-    "redis": "~0.10.0",
-    "fluent-ffmpeg": "~1.5.2",
-    "kue": "~0.6.2"
+    "fluent-ffmpeg": "^2.0.0-rc3",
+    "kue": "^0.8.10",
+    "redis": "^0.12.1"
   }
 }
