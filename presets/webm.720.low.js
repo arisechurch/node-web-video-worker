@@ -4,7 +4,7 @@ module.exports = function (options) {
     require('./webm.video.low.js')(ffmpeg)
 
     ffmpeg
-      .addOption('-b:v', '1250k')
+      .addOption('-b:v', '1000k')
       .addOption('-vf', 'scale=-1:720')
 
     require('./webm.audio.js')(ffmpeg)
