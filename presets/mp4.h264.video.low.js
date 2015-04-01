@@ -4,7 +4,7 @@ module.exports = function (ffmpeg) {
     .addOption('-codec:v', 'libx264')
     .addOption('-preset', 'slow')
     .addOption('-pix_fmt', 'yuv420p')
-    .addOption('-r:v', '27')
+    .addOption('-r:v', '30')
     .addOption('-vsync', 'vfr')
-    .addOption('-crf', '30')
+    .addOption('-crf', '27')
 }
