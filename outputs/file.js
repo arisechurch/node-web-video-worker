@@ -11,8 +11,12 @@ module.exports = function (config) {
         done()
       })
 
+    job.on('failed', function() {
+      ffmpeg.kill();
+    });
+
     function onProgress (progress) {
-      job.progress(Math.round(progress.percent), 100)
+      job.progress(Math.round(progress.percent), 100);
     }
   }
 }
