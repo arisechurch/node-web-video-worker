@@ -1,9 +1,9 @@
 var spawn = require('child_process').spawn
-var file = require('./file.js');
+var mfile = require('./file.js');
 
 module.exports = function(config) {
   var faststart = config.faststart || 'qtfaststart'
-  var file = file(config);
+  var file = mfile(config);
 
   return function fileOutput (job, ffmpeg, done) {
     file(job, ffmpeg, doneFile);
